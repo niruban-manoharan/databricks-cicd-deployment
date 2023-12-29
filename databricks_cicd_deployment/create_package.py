@@ -6,9 +6,10 @@ import requests
 
 DATABRICKS_API_KEY = os.environ["DATABRICKS_API_KEY"]
 DATABRICKS_URL = os.environ["DEV_DATABRICKS_URL"]
+HOME = os.environ["HOME"]
 
 
-f2 = open('$HOME/components.yml')
+f2 = open('{HOME}/components.yml')
 
 component_data = load(f2, Loader=Loader)
 
@@ -29,9 +30,9 @@ for migration_job_id in component_data["jobs"]:
     response_json = response.json()
     #print(response_json)
     job_name = response_json["settings"]["name"].replace(" ","")
-    filename = f"job_json_export/"+job_name+".json"
-    jsonfilename = f"job_json_export/"+job_name+"_converted.json"
-    yamlfilename = f"databricks_cicd_deployment/resources/"+job_name+".yml"
+    filename = f"{HOME}/job_json_export/"+job_name+".json"
+    jsonfilename = f"{HOME}/job_json_export/"+job_name+"_converted.json"
+    yamlfilename = f"{HOME}/databricks_cicd_deployment/resources/"+job_name+".yml"
     os.makedirs(os.path.dirname(filename), exist_ok=True)
     input_json_file = open(filename, "w")
     json.dump(response_json, input_json_file)
