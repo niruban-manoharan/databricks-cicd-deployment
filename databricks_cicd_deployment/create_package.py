@@ -9,7 +9,7 @@ DATABRICKS_URL = os.environ["DEV_DATABRICKS_URL"]
 HOME = os.environ["HOME"]
 
 
-f2 = open('{HOME}/components.yml')
+f2 = open(f"{HOME}"+'/components.yml')
 
 component_data = load(f2, Loader=Loader)
 
