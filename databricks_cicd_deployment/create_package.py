@@ -8,7 +8,7 @@ DATABRICKS_API_KEY = os.environ["DATABRICKS_API_KEY"]
 DATABRICKS_URL = os.environ["DEV_DATABRICKS_URL"]
 
 
-f2 = open('../databricks-cicd-deployment/databricks_cicd_deployment/components.yml')
+f2 = open('/home/runner/components.yml')
 
 component_data = load(f2, Loader=Loader)
 
