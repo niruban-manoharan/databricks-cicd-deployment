@@ -32,7 +32,7 @@ for migration_job_id in component_data["jobs"]:
     job_name = response_json["settings"]["name"].replace(" ","")
     filename = f"{HOME}/job_json_export/"+job_name+".json"
     jsonfilename = f"{HOME}/job_json_export/"+job_name+"_converted.json"
-    yamlfilename = f"{HOME}/databricks_cicd_deployment/resources/"+job_name+".yml"
+    yamlfilename = f"{HOME}/databricks-cicd-deployment/databricks_cicd_deployment/resources/"+job_name+".yml"
     os.makedirs(os.path.dirname(filename), exist_ok=True)
     input_json_file = open(filename, "w")
     json.dump(response_json, input_json_file)
