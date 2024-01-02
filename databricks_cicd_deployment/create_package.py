@@ -24,7 +24,9 @@ for migration_job_id in component_data["jobs"]:
     job_raw["job_id"] = str(migration_job_id)
     #job = "'"+json.dumps(job_raw)+"'"
     job = json.dumps(job_raw)
-    #print(job)
+    print(job)
+    print(url)
+    print(headers)
     #print(type(job))
     response = requests.get(url, data=job, headers=headers, timeout=30)
     response_json = response.json()
