@@ -19,6 +19,9 @@ headers["Authorization"] = f"Bearer {DATABRICKS_API_KEY}"
 
 url = f"{DATABRICKS_URL}"
 
+print(headers)
+print(url)
+
 for migration_job_id in component_data["jobs"]:
     job_raw = {}
     job_raw["job_id"] = str(migration_job_id)
