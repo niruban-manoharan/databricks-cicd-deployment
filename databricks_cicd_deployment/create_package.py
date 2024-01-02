@@ -29,7 +29,7 @@ for migration_job_id in component_data["jobs"]:
     print(headers)
     #print(type(job))
     response = requests.get(url, data=job, headers=headers, timeout=30)
-    print(response)
+    print(response.text)
     try:
         response_json = response.json()
     except JSONDecodeError:
