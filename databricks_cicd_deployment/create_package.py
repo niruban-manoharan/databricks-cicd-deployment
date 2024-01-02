@@ -17,7 +17,7 @@ headers = {}
 
 headers["Authorization"] = f"Bearer {DATABRICKS_API_KEY}"
 
-url = f"{DATABRICKS_URL}/api/2.1/jobs/get"
+url = f"{DATABRICKS_URL}"
 
 for migration_job_id in component_data["jobs"]:
     job_raw = {}
