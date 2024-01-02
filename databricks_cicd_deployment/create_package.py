@@ -29,6 +29,7 @@ for migration_job_id in component_data["jobs"]:
     print(headers)
     #print(type(job))
     response = requests.get(url, data=job, headers=headers, timeout=30)
+    print(response.json())
     print(response)
     response_json = response.json()
     job_name = response_json["settings"]["name"].replace(" ","")
