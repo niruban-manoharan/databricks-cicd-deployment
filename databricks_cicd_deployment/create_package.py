@@ -5,9 +5,9 @@ from yaml import CLoader as Loader, CDumper as Dumper
 import requests
 
 DATABRICKS_API_KEY = os.environ["DATABRICKS_API_KEY_V"]
-print(DATABRICKS_API_KEY)
+print(os.environ["DATABRICKS_API_KEY_V"])
 DATABRICKS_URL = os.environ["DEV_DATABRICKS_URL_V"]
-print(DATABRICKS_URL)
+print(os.environ["DEV_DATABRICKS_URL_V"])
 HOME = os.environ["HOME"]
 
 
