@@ -25,7 +25,7 @@ for migration_job_id in component_data["jobs"]:
     job = json.dumps(job_raw)
     
     response = requests.get(url, data=job, headers=headers, timeout=30)
-    print(response.json())
+    print(response.text)
     
     try:
         response_json = response.json()
