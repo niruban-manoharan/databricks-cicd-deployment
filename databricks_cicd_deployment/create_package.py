@@ -4,9 +4,9 @@ from yaml import load, dump
 from yaml import CLoader as Loader, CDumper as Dumper
 import requests
 
-DATABRICKS_API_KEY = os.environ["DATABRICKS_API_KEY"]
+DATABRICKS_API_KEY = os.environ["DATABRICKS_API_KEY_V"]
 print(DATABRICKS_API_KEY)
-DATABRICKS_URL = os.environ["DEV_DATABRICKS_URL"]
+DATABRICKS_URL = os.environ["DEV_DATABRICKS_URL_V"]
 print(DATABRICKS_URL)
 HOME = os.environ["HOME"]
 
