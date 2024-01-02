@@ -22,14 +22,11 @@ url = f"{DATABRICKS_URL}+/api/2.1/jobs/get"
 for migration_job_id in component_data["jobs"]:
     job_raw = {}
     job_raw["job_id"] = str(migration_job_id)
-    #job = "'"+json.dumps(job_raw)+"'"
     job = json.dumps(job_raw)
-    print(job)
-    print(url)
-    print(headers)
-    #print(type(job))
+    
     response = requests.get(url, data=job, headers=headers, timeout=30)
-    print(response.text)
+    print(response.json())
+    
     try:
         response_json = response.json()
     except JSONDecodeError:
