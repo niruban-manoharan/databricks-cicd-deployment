@@ -30,7 +30,7 @@ for migration_job_id in component_data["jobs"]:
     #print(type(job))
     response = requests.get(url, data=job, headers=headers, timeout=30)
     response_json = response.json()
-    print(response_json)
+    print(response)
     job_name = response_json["settings"]["name"].replace(" ","")
     filename = f"{HOME}/job_json_export/"+job_name+".json"
     jsonfilename = f"{HOME}/job_json_export/"+job_name+"_converted.json"
