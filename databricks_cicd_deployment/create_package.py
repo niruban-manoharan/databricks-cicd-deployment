@@ -29,9 +29,11 @@ for migration_job_id in component_data["jobs"]:
     print(headers)
     #print(type(job))
     response = requests.get(url, data=job, headers=headers, timeout=30)
-    print(response.json())
     print(response)
-    response_json = response.json()
+    try:
+        response_json = response.json()
+    except JSONDecodeError:
+        print('Response could not be serialized')
     job_name = response_json["settings"]["name"].replace(" ","")
     filename = f"{HOME}/job_json_export/"+job_name+".json"
     jsonfilename = f"{HOME}/job_json_export/"+job_name+"_converted.json"
